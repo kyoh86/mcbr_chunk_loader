@@ -1,0 +1,9 @@
+{
+	"resource_pack_name": "ChunkLoader",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"kyoh86_chunk_loader_block": {
+			"textures": "textures/chunk_loader/block"
+		}
+	}
+}

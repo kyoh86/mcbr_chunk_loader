@@ -1,0 +1,18 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "kyoh86:chunk_loader",
+			"materials": { "default": "entity_emissive" },
+			"geometry": { "default": "geometry.kyoh86.chunk_loader" },
+			"textures": {
+				"chunk_loader_0": "textures/chunk_loader/0",
+				"chunk_loader_1": "textures/chunk_loader/1",
+				"chunk_loader_2": "textures/chunk_loader/2",
+				"chunk_loader_3": "textures/chunk_loader/3",
+				"chunk_loader_4": "textures/chunk_loader/4"
+			},
+			"render_controllers": [ "controller.render.kyoh86.chunk_loader" ]
+		}
+	}
+}

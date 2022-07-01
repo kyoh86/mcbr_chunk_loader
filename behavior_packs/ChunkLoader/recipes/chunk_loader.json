@@ -1,0 +1,22 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:recipe_shaped": {
+		"description": { "identifier": "kyoh86:chunk_loader" },
+		"tags": [ "crafting_table" ],
+		"pattern": [
+			"SSS",
+			"SRS",
+			"SSS"
+		],
+		"key": {
+			"S": {
+				"item": "minecraft:stonebrick",
+				"data": 3
+			},
+			"R": {
+				"item": "minecraft:redstone_block"
+			}
+		},
+		"result": { "item": "kyoh86:chunk_loader_block" }
+	}
+}

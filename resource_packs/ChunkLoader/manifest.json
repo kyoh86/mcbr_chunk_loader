@@ -1,0 +1,17 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Chunk Loaders keep things loaded around them, even when no one is around. This add-on supports 2, 4 or 6 chunk radius.",
+		"name": "Chunk Loader v1.0.0",
+		"uuid": "a0999e90-9e33-4233-bb0c-2059d11275a2",
+		"version": [ 1, 0, 0 ],
+		"min_engine_version": [ 1, 16, 0 ]
+	},
+	"modules": [
+		{
+			"uuid": "bad16660-f177-43d1-8794-0e0eb25c5a96",
+			"type": "resources",
+			"version": [ 1, 0, 0 ]
+		}
+	]
+}

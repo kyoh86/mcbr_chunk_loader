@@ -1,0 +1,21 @@
+{
+	"format_version": "1.12.0",
+	"render_controllers": {
+		"controller.render.kyoh86.chunk_loader": {
+			"arrays": {
+				"textures": {
+					"Array.textures": [
+						"Texture.chunk_loader_0",
+						"Texture.chunk_loader_1",
+						"Texture.chunk_loader_2",
+						"Texture.chunk_loader_3",
+						"Texture.chunk_loader_4"
+					]
+				}
+			},
+			"geometry": "Geometry.default",
+			"materials": [{ "*": "Material.default" }],
+			"textures": [ "Array.textures[query.skin_id]" ]
+		}
+	}
+}
