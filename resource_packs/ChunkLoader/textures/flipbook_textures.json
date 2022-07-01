@@ -1,0 +1,8 @@
+[
+	{
+		"flipbook_texture": "textures/chunk_loader/block",
+		"atlas_tile": "kyoh86_chunk_loader_block",
+		"ticks_per_frame": 20,
+		"blend_frames": true
+	}
+]

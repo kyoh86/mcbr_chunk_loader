@@ -1,0 +1,27 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "kyoh86:chunk_loader_block",
+			"register_to_creative_menu": true
+		},
+		"components": {
+			"minecraft:on_interact": {
+				"event" : "kyoh86:chunk_loader_startup"
+			},
+			"minecraft:map_color": "#007979",
+			"minecraft:block_light_emission": 0
+		},
+		"events": {
+			"kyoh86:chunk_loader_startup": {
+				"run_command":{
+					"command": "summon kyoh86:chunk_loader \"Chunk Loader\"",
+					"target": "self"
+				},
+				"set_block":{
+					"block_type": "air"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,272 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "kyoh86:chunk_loader",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"kyoh86:instant_despawn": {
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:instant_despawn": {}
+			},
+			"kyoh86:radius_2": {
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"none_of": {
+										"test": "is_sneaking",
+										"subject": "player"
+									}
+								},
+								"event": "kyoh86:radius_4"
+							},
+							"interact_text": "Set Radius to 4 Chunks",
+							"swing": true,
+							"play_sounds": "deny"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": {
+										"test": "is_sneaking",
+										"subject": "player"
+									}
+								},
+								"event": "kyoh86:instant_despawn"
+							},
+							"spawn_items": {
+								"table": "loot_tables/entities/chunk_loader.json"
+							},
+							"interact_text": "Pickup",
+							"swing": true,
+							"play_sounds": "beacon.deactivate"
+						}
+					]
+				},
+				"minecraft:tick_world": {
+					"never_despawn": true,
+					"radius": 2
+				}
+			},
+			"kyoh86:radius_4": {
+				"minecraft:skin_id": {
+					"value": 3
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"none_of": {
+										"test": "is_sneaking",
+										"subject": "player"
+									}
+								},
+								"event": "kyoh86:radius_6"
+							},
+							"interact_text": "Set Radius to 6 Chunks",
+							"swing": true,
+							"play_sounds": "deny"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": {
+										"test": "is_sneaking",
+										"subject": "player"
+									}
+								},
+								"event": "kyoh86:instant_despawn"
+							},
+							"spawn_items": {
+								"table": "loot_tables/entities/chunk_loader.json"
+							},
+							"interact_text": "Pickup",
+							"swing": true,
+							"play_sounds": "beacon.deactivate"
+						}
+					]
+				},
+				"minecraft:tick_world": {
+					"never_despawn": true,
+					"radius": 4
+				}
+			},
+			"kyoh86:radius_6": {
+				"minecraft:skin_id": {
+					"value": 4
+				},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"none_of": {
+										"test": "is_sneaking",
+										"subject": "player"
+									}
+								},
+								"event": "kyoh86:radius_2"
+							},
+							"interact_text": "Set Radius to 2 Chunks",
+							"swing": true,
+							"play_sounds": "deny"
+						},
+						{
+							"on_interact": {
+								"filters": {
+									"all_of": {
+										"test": "is_sneaking",
+										"subject": "player"
+									}
+								},
+								"event": "kyoh86:instant_despawn"
+							},
+							"spawn_items": {
+								"table": "loot_tables/entities/chunk_loader.json"
+							},
+							"interact_text": "Pickup",
+							"swing": true,
+							"play_sounds": "beacon.deactivate"
+						}
+					]
+				},
+				"minecraft:tick_world": {
+					"never_despawn": true,
+					"radius": 6
+				}
+			}
+		},
+		"components": {
+			"minecraft:skin_id": {
+				"value": 0
+			},
+			"minecraft:health": {
+				"max": 1,
+				"value": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:nameable": {
+				"always_show": true
+			},
+			"minecraft:pushable":{
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:buoyant":{
+				"apply_gravity": false,
+				"base_buoyancy": 0.0,
+				"drag_down_on_buoyancy_removed": 0.0,
+				"liquid_blocks": [
+					"minecraft:water",
+					"minecraft:flowing_water"
+				]
+			},
+			"minecraft:physics":{
+				"has_collision": true,
+				"has_gravity": true
+			},
+			"minecraft:ground_offset":{
+				"value": -1
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"none_of": {
+									"test": "is_sneaking",
+									"subject": "player"
+								}
+							},
+							"event": "kyoh86:radius_2"
+						},
+						"interact_text": "Set Radius to 2 Chunks",
+						"swing": true,
+						"play_sounds": "beacon.activate"
+					},
+					{
+						"on_interact": {
+							"filters": {
+								"all_of": {
+									"test": "is_sneaking",
+									"subject": "player"
+								}
+							},
+							"event": "kyoh86:instant_despawn"
+						},
+						"spawn_items": {
+							"table": "loot_tables/entities/chunk_loader.json"
+						},
+						"interact_text": "Pickup",
+						"swing": true,
+						"play_sounds": "beacon.deactivate"
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"kyoh86:instant_despawn": {
+				"add": {
+					"component_groups": [
+						"kyoh86:instant_despawn"
+					]
+				}
+			},
+			"kyoh86:radius_2": {
+				"add": {
+					"component_groups": [
+						"kyoh86:radius_2"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"kyoh86:radius_4",
+						"kyoh86:radius_6"
+					]
+				}
+			},
+			"kyoh86:radius_4": {
+				"add": {
+					"component_groups": [
+						"kyoh86:radius_4"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"kyoh86:radius_2",
+						"kyoh86:radius_6"
+					]
+				}
+			},
+			"kyoh86:radius_6": {
+				"add": {
+					"component_groups": [
+						"kyoh86:radius_6"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"kyoh86:radius_2",
+						"kyoh86:radius_4"
+					]
+				}
+			}
+		}
+	}
+}
